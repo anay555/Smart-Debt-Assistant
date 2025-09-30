@@ -1,0 +1,52 @@
+[
+  {
+    "Category":"Payments",
+    "Question":"How can I make a payment?",
+    "Answer":"You can pay instantly using a secure payment link I\u2019ll share with you. The link will remain valid for 2 hours. If you need help while making the payment, I\u2019ll stay with you step by step."
+  },
+  {
+    "Category":"Payments",
+    "Question":"What if the payment link expires?",
+    "Answer":"If the payment link expires, I can generate a fresh one for you right away."
+  },
+  {
+    "Category":"Promises to Pay",
+    "Question":"Can I promise to pay on a later date?",
+    "Answer":"Yes. Please share your preferred payment date. I\u2019ll validate that it\u2019s in the future and set a reminder for you one day before the due date."
+  },
+  {
+    "Category":"Promises to Pay",
+    "Question":"What if I can\u2019t pay on the promised date?",
+    "Answer":"If you face any difficulty, just inform me. I\u2019ll either extend the arrangement (if policy allows) or connect you with a support specialist."
+  },
+  {
+    "Category":"Disputes",
+    "Question":"What if I disagree with the due amount?",
+    "Answer":"I\u2019ll capture a short summary of your dispute and escalate it to our manual review team. They\u2019ll respond within 3 working days."
+  },
+  {
+    "Category":"Hardship",
+    "Question":"I\u2019m unable to pay due to financial hardship. What should I do?",
+    "Answer":"I\u2019ll record your situation and check if you\u2019re eligible for a short payment plan. If not, I can schedule a callback with our support team."
+  },
+  {
+    "Category":"Callbacks & Escalations",
+    "Question":"Can I get a callback?",
+    "Answer":"Yes. Please tell me your preferred date and time, and I\u2019ll schedule a callback from our support team."
+  },
+  {
+    "Category":"Callbacks & Escalations",
+    "Question":"I need to speak to a human agent.",
+    "Answer":"Sure. I\u2019ll transfer your call to a recovery support specialist right away."
+  },
+  {
+    "Category":"Compliance & DNC",
+    "Question":"Can you stop contacting me?",
+    "Answer":"Yes. I\u2019ll mark your account as 'Do Not Call,' and you won\u2019t receive further outreach from us."
+  },
+  {
+    "Category":"Compliance & DNC",
+    "Question":"Will you take legal action if I don\u2019t pay?",
+    "Answer":"I cannot provide legal advice. If you\u2019d like, I can connect you with our recovery team to discuss your options."
+  }
+]
