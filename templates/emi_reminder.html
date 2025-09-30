@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EMI Payment Reminder</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f4f9;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #333333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .header {
+      padding: 25px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .header h1 { margin: 0; font-size: 22px; font-weight: 600; }
+    .content { padding: 25px 30px; line-height: 1.6; }
+    .content h2 { font-size: 18px; margin-top: 0; }
+    .highlight { font-weight: bold; }
+    .button {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #0066cc, #0099ff);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+    .button:hover { background: linear-gradient(135deg, #0052a3, #0080e6); }
+    .footer {
+      background: #f8fafc;
+      padding: 15px 20px;
+      font-size: 12px;
+      color: #888888;
+      text-align: center;
+      border-top: 1px solid #e6e6e6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header (bucket color) -->
+    {{#if (eq bucket "Pre-due")}}
+      <div class="header" style="background: linear-gradient(135deg,#2ecc71,#27ae60);">
+        <h1>Friendly Reminder 🌱</h1>
+      </div>
+    {{else if (eq bucket "Bucket 0")}}
+      <div class="header" style="background: linear-gradient(135deg,#3498db,#2980b9);">
+        <h1>We’re Here to Help 🤝</h1>
+      </div>
+    {{else if (or (eq bucket "Bucket 1") (eq bucket "Bucket 2"))}}
+      <div class="header" style="background: linear-gradient(135deg,#f39c12,#e67e22);">
+        <h1>Important Payment Notice ⚠️</h1>
+      </div>
+    {{else if (or (eq bucket "Bucket 3") (eq bucket "NPA"))}}
+      <div class="header" style="background: linear-gradient(135deg,#e74c3c,#c0392b);">
+        <h1>Final Reminder ❗</h1>
+      </div>
+    {{else}}
+      <div class="header" style="background: linear-gradient(135deg,#0066cc,#0099ff);">
+        <h1>EMI Payment Reminder</h1>
+      </div>
+    {{/if}}
+
+    <!-- Content -->
+    <div class="content">
+      <h2>Hello {{customer_name}},</h2>
+      <p>
+        This is to remind you that your EMI of 
+        <span class="highlight">₹{{amount_due}}</span> 
+        for Loan <span class="highlight">{{loan_id}}</span> 
+        is due on <span class="highlight">{{due_date}}</span>.
+      </p>
+
+      {{#if next_action.url}}
+        <p>You can make your payment securely using the button below:</p>
+        <p style="text-align:center;">
+          <a href="{{next_action.url}}" class="button">💳 Pay Now</a>
+        </p>
+      {{/if}}
+
+      {{#if (eq bucket "Pre-due")}}
+        <p style="color:#27ae60;">This is just a friendly heads-up before your due date. You’re on track ✅.</p>
+      {{else if (eq bucket "Bucket 0")}}
+        <p style="color:#2980b9;">We understand things happen — let’s resolve this together.</p>
+      {{else if (or (eq bucket "Bucket 1") (eq bucket "Bucket 2"))}}
+        <p style="color:#e67e22;">Your account is overdue. Please act promptly to avoid additional reminders.</p>
+      {{else if (or (eq bucket "Bucket 3") (eq bucket "NPA"))}}
+        <p style="color:#c0392b; font-weight:bold;">This is a compliance-based notice. Please clear your dues immediately.</p>
+      {{/if}}
+
+      <p>Thank you,<br/><strong>Smart Debt Assistant</strong></p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        This is an automated message. If you have already made the payment, kindly ignore this email.  
+        <br/>© {{year}} Smart Debt Assistant
+      </p>
+    </div>
+  </div>
+</body>
+</html>
